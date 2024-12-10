@@ -1,4 +1,6 @@
 
+import java.util.Scanner;
+
 public class Basics {
 
     public static void main(String[] args) {
@@ -35,9 +37,18 @@ public class Basics {
         int mul = num1 * num2;
         int div = num2 / num1;
         System.out.println(add + " " + sub + " " + mul + " " + div);
-        
+
         String s = "Arihant";
         System.out.println(s.length());
         System.out.println(s.charAt(2));
+
+        Scanner sc = new Scanner(System.in);
+        int inputNumber = sc.nextInt();
+        System.out.println(inputNumber);
+        String firstName = sc.next();
+        String lastName = sc.next();
+        String aSentence = sc.nextLine();
+        System.out.println(firstName + " " + lastName + aSentence);
+        sc.close();
     }
 }
