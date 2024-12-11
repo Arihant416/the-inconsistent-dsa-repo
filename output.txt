@@ -1,12 +1,6 @@
-Hello World
-100
-200
-74291
-5.6
-a
-true
-15 5 50 2
-7
-i
-100
-Arihant Jain A Quick Sivler
+2
+Teen
+B
+Largest among three is4
+Current Day is Wednesday
+10 9 8 7 6 

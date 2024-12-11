@@ -50,5 +50,10 @@ public class Basics {
         String aSentence = sc.nextLine();
         System.out.println(firstName + " " + lastName + aSentence);
         sc.close();
+
+        // Constants are declared using Final Keyword
+        final int const1 = 10;
+        // const = 11 will throw an error.
+        System.out.println(const1);
     }
 }
