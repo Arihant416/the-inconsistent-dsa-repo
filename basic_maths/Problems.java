@@ -29,6 +29,22 @@ public class Problems {
 
             // Problem 8: Check if a number is Perfect
             System.out.println("IsPerfect ? " + number + " ? " + isPerfectNumber(number));
+
+            // Problem 9: Check if a number is prime
+            System.out.println("isPrime ? " + number + " ? " + isPrime(number));
+
+            // Problem 10: Count of primes till N
+            System.out.println("primeCount ? " + number + " ? " + findPrimeTilLN(number));
+
+            // Problem 11: GCD of two numbers 
+            greatestCommonDivisor(sc);
+
+            // Problem 12: LCM of two numbers
+            lowestCommonMultiple(sc);
+
+            // Problem 13: Divisors of number
+            printDivisorsOfANumber(number);
+
         }
     }
 
@@ -110,8 +126,57 @@ public class Problems {
     }
 
     public static boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        if (num <= 3 || num == 5 || num == 7) {
+            return true;
+        }
+        if (num % 2 == 0 || num % 3 == 0 || num % 5 == 0 || num % 7 == 0) {
+            return false;
+        }
+        for (int i = 5; i * i <= num; i += 6) {
+            if (num % i == 0 || num % (i + 2) == 0) {
+                return false;
+            }
+        }
         return true;
     }
 
-    
+    public static int findPrimeTilLN(int N) {
+        int count = 0;
+        for (int i = 1; i <= N; i++) {
+            count += (isPrime(i) ? 1 : 0);
+        }
+        return count;
+    }
+
+    public static int gcdRecur(int a, int b) {
+        if (a == 0) {
+            return b;
+        }
+        return gcdRecur(b % a, a);
+    }
+
+    public static void greatestCommonDivisor(Scanner sc) {
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        System.out.println("GCD of " + a + " & " + b + " is " + gcdRecur(a, b));
+    }
+
+    public static void lowestCommonMultiple(Scanner sc) {
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int gcd = gcdRecur(a, b);
+        System.out.println("LCD of " + a + " & " + b + " is " + (a * b) / gcd);
+    }
+
+    public static void printDivisorsOfANumber(int number) {
+        System.out.print("Divisors of number " + number + " : ");
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0) {
+                System.out.print(i + ", ");
+            }
+        }
+    }
 }
