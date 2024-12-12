@@ -14,6 +14,9 @@ public class Problems {
 
             // Problem 3: Reverse a number
             System.out.println("Reverse of a number -> " + number + " is " + reverseOf(number));
+
+            // Problem 4: Palindrome Number
+            System.out.println("Is palindrome -> " + number + "? " + isPalindrome(number));
         }
     }
 
@@ -38,13 +41,17 @@ public class Problems {
         return count;
     }
 
-    public static int reverseOf(int num){
-      int rev = 0;
-      while(num > 0){
-        int rem = num % 10;
-        rev = rev * 10 + rem;
-        num /= 10;
-      }
-      return rev;
+    public static int reverseOf(int num) {
+        int rev = 0;
+        while (num > 0) {
+            int rem = num % 10;
+            rev = rev * 10 + rem;
+            num /= 10;
+        }
+        return rev;
     }
-  }
+
+    public static boolean isPalindrome(int num) {
+        return reverseOf(num) == num;
+    }
+}
