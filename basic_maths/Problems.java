@@ -17,6 +17,9 @@ public class Problems {
 
             // Problem 4: Palindrome Number
             System.out.println("Is palindrome -> " + number + "? " + isPalindrome(number));
+
+            // Problem 5: largest digit in a number
+            System.out.println("Largest Digit in number -> " + number + " is " + findLargestDigitInNumber(number));
         }
     }
 
@@ -54,4 +57,17 @@ public class Problems {
     public static boolean isPalindrome(int num) {
         return reverseOf(num) == num;
     }
+
+    public static int findLargestDigitInNumber(int num) {
+        int digit = 0;
+        while (num > 0) {
+            int rem = num % 10;
+            if (digit < rem) {
+                digit = rem;
+            }
+            num /= 10;
+        }
+        return digit;
+    }
+
 }
