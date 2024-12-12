@@ -23,6 +23,12 @@ public class Problems {
 
             // Problem 6: Factorial of a number
             System.out.println("Factorial of number " + number + " is " + findFactorial(number));
+
+            // Problem 7: Check if a number is Armstrong
+            System.out.println("IsArmstrong ? " + number + " ? " + isArmstrong(number));
+
+            // Problem 8: Check if a number is Perfect
+            System.out.println("IsPerfect ? " + number + " ? " + isPerfectNumber(number));
         }
     }
 
@@ -81,4 +87,31 @@ public class Problems {
         return res;
     }
 
+    public static boolean isArmstrong(int num) {
+        // Armstrong number is one who sum of digits raised to power number of digits is equal to the number itself
+        int digitCount = countDigits(num);
+        int sum = 0;
+        int numcopy = num;
+        while (num > 0) {
+            sum += Math.pow(num % 10, digitCount);
+            num /= 10;
+        }
+        return sum == numcopy;
+    }
+
+    public static boolean isPerfectNumber(int num) {
+        int divSum = 0;
+        for (int i = 1; i < num; i++) {
+            if (num % i == 0) {
+                divSum += i;
+            }
+        }
+        return divSum == num;
+    }
+
+    public static boolean isPrime(int num) {
+        return true;
+    }
+
+    
 }

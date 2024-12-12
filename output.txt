@@ -1,6 +1,8 @@
-2
-Teen
-B
-Largest among three is4
-Current Day is Wednesday
-10 9 8 7 6 
+Digits in number -> 6 is 1
+Odd Digits in number -> 6 is 0
+Reverse of a number -> 6 is 6
+Is palindrome -> 6? true
+Largest Digit in number -> 6 is 6
+Factorial of number 6 is 720
+IsArmstrong ? 6 ? true
+IsPerfect ? 6 ? true
