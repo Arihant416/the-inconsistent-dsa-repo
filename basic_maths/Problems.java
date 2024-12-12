@@ -11,6 +11,9 @@ public class Problems {
 
             // Problem 2: Count Number of odd digits in a number
             System.out.println("Odd Digits in number -> " + number + " is " + countOddDigits(number));
+
+            // Problem 3: Reverse a number
+            System.out.println("Reverse of a number -> " + number + " is " + reverseOf(number));
         }
     }
 
@@ -34,4 +37,14 @@ public class Problems {
         }
         return count;
     }
-}
+
+    public static int reverseOf(int num){
+      int rev = 0;
+      while(num > 0){
+        int rem = num % 10;
+        rev = rev * 10 + rem;
+        num /= 10;
+      }
+      return rev;
+    }
+  }
