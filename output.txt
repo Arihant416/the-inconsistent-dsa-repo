@@ -1,13 +1,3 @@
-Digits in number -> 28 is 2
-Odd Digits in number -> 28 is 0
-Reverse of a number -> 28 is 82
-Is palindrome -> 28? false
-Largest Digit in number -> 28 is 8
-Factorial of number 28 is -1375731712
-IsArmstrong ? 28 ? false
-IsPerfect ? 28 ? true
-isPrime ? 28 ? false
-primeCount ? 28 ? 9
-GCD of 4 & 6 is 2
-LCD of 4 & 6 is 12
-Divisors of number 28 : 1, 2, 4, 7, 14, 28, 
+Sum of array is -> 15
+Array has3 odd elements
+5 4 3 2 1 
