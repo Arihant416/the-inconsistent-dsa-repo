@@ -20,6 +20,9 @@ public class Problems {
 
             // Problem 5: largest digit in a number
             System.out.println("Largest Digit in number -> " + number + " is " + findLargestDigitInNumber(number));
+
+            // Problem 6: Factorial of a number
+            System.out.println("Factorial of number " + number + " is " + findFactorial(number));
         }
     }
 
@@ -68,6 +71,14 @@ public class Problems {
             num /= 10;
         }
         return digit;
+    }
+
+    public static int findFactorial(int num) {
+        int res = 1;
+        for (int i = 1; i <= num; i++) {
+            res *= i;
+        }
+        return res;
     }
 
 }
