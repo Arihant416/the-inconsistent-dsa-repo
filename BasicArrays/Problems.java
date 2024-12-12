@@ -31,22 +31,46 @@ class Problems {
         }
     }
 
+    private void isSorted(Scanner sc) {
+		// This algo will only check one way!! (Better question is check if array is sortedEitherWay)
+        int n = sc.nextInt();
+        int[] array = new int[n];
+        for (int i = 0; i < n; i++) {
+            array[i] = sc.nextInt();
+        }
+        boolean result = true;
+        for(int i = 0; i < n-1; i++){
+			if(array[i] > array[i+1]){
+				result= false;
+				break;
+			}
+		}
+        if (!result) {
+            System.out.println("\nNot Sorted");
+        } else {
+            System.out.println("\nSorted");
+        }
+    }
+
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
             Problems obj = new Problems();
-            int size = scanner.nextInt();
-            int[] array = new int[size];
-            for (int i = 0; i < size; i++) {
-                array[i] = scanner.nextInt();
-            }
-            // Problem 1: Find Sum of Array
-            obj.findSumOfArray(array);
-
-            // Problem 2: Count odd numbers in array
-            obj.countOddNumbers(array);
-
-            // Problem 3: Reverse an Array
-            obj.reverseArray(array);
+        int size = scanner.nextInt();
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = scanner.nextInt();
         }
+        // Problem 1: Find Sum of Array
+        obj.findSumOfArray(array);
+
+        // Problem 2: Count odd numbers in array
+        obj.countOddNumbers(array);
+
+        // Problem 3: Reverse an Array
+        obj.reverseArray(array);
+
+        // Problem 4: Check if an array is sorted
+        obj.isSorted(scanner);
     }
+}
 }
