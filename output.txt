@@ -1,4 +1,1 @@
-Sum of array is -> 15
-Array has3 odd elements
-5 4 3 2 1 
-Not Sorted
+isIsomorphic true
