@@ -14,6 +14,8 @@ class MoreProblemsBasic {
 
     System.out.println("Sum of digits in a given number " + sumUntilNumLessThan10(number));
 
+    System.out.println("Nth fibonacci number is -> " + findNthFibonacci(number));
+
   }
 
   private static String recurHelper(StringBuilder str, int start, int end) {
@@ -53,5 +55,11 @@ class MoreProblemsBasic {
       num /= 10;
     }
     return sumUntilNumLessThan10(sum);
+  }
+
+  private static int findNthFibonacci(int num) {
+    if (num <= 1)
+      return num;
+    return findNthFibonacci(num - 1) + findNthFibonacci(num - 2);
   }
 }
