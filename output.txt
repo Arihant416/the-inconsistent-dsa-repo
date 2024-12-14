@@ -1,2 +1,12 @@
-Tail Recursion took 3
-Head Recursion took 10
+Tail Recursion took 0
+Head Recursion took 0
+1
+2
+3
+4
+5
+5
+4
+3
+2
+1
