@@ -17,6 +17,7 @@ class BasicProblems {
         System.out.println("Head Recursion took " + duration);
         print1ToN(n);
         printNTo1(n);
+        System.out.println("Factorial of " + n + " is " + findFactorial(n));
     }
 
     // This is a case for tail recursion
@@ -49,8 +50,19 @@ class BasicProblems {
     }
 
     private static void printNTo1(int n) {
-        if(n == 0)return;
+        if (n == 0) {
+            return;
+        }
         System.out.println(n);
         printNTo1(n - 1);
     }
+
+    private static int findFactorial(int n) {
+        if (n == 0) {
+            return 1;
+        }
+        return n * findFactorial(n - 1);
+    }
+
+    
 }
