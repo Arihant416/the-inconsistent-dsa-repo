@@ -18,6 +18,7 @@ class BasicProblems {
         print1ToN(n);
         printNTo1(n);
         System.out.println("Factorial of " + n + " is " + findFactorial(n));
+        System.out.println("Sum till " + n + " is " + findSumTillN(n));
     }
 
     // This is a case for tail recursion
@@ -62,6 +63,13 @@ class BasicProblems {
             return 1;
         }
         return n * findFactorial(n - 1);
+    }
+
+    private static int findSumTillN(int n) {
+        if (n <= 1) {
+            return n;
+        }
+        return n + findSumTillN(n - 1);
     }
 
     
