@@ -4,17 +4,17 @@ import java.util.Scanner;
 class MoreProblemsBasic {
 
   public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-
-    String str = sc.nextLine();
-    System.out.println("String Reversed is " + reverse(str));
-
-    int number = sc.nextInt();
-    System.out.println("IS Prime ? " + number + " -> " + isPrime(number));
-
-    System.out.println("Sum of digits in a given number " + sumUntilNumLessThan10(number));
-
-    System.out.println("Nth fibonacci number is -> " + findNthFibonacci(number));
+      try (Scanner sc = new Scanner(System.in)) {
+          String str = sc.nextLine();
+          System.out.println("String Reversed is " + reverse(str));
+          
+          int number = sc.nextInt();
+          System.out.println("IS Prime ? " + number + " -> " + isPrime(number));
+          
+          System.out.println("Sum of digits in a given number " + sumUntilNumLessThan10(number));
+          
+          System.out.println("Nth fibonacci number is -> " + findNthFibonacci(number));
+      }
 
   }
 
