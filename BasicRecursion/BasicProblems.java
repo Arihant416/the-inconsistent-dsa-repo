@@ -19,6 +19,12 @@ class BasicProblems {
         printNTo1(n);
         System.out.println("Factorial of " + n + " is " + findFactorial(n));
         System.out.println("Sum till " + n + " is " + findSumTillN(n));
+
+        int[] array = new int[n];
+        for (int i = 0; i < n; i++) {
+            array[i] = sc.nextInt();
+        }
+        System.out.println("Sum of array is -> " + findSumOfArrayElements(array, n));
     }
 
     // This is a case for tail recursion
@@ -72,5 +78,14 @@ class BasicProblems {
         return n + findSumTillN(n - 1);
     }
 
-    
+    private static int arraySumRecurHelper(int[] nums, int n, int index) {
+        if (index == n) {
+            return 0;
+        }
+        return nums[index] + arraySumRecurHelper(nums, n, index + 1);
+    }
+
+    private static int findSumOfArrayElements(int[] array, int size) {
+        return arraySumRecurHelper(array, size, 0);
+    }
 }
