@@ -1,4 +1,1 @@
-String Reversed is otomustam
-IS Prime ? 11 -> true
-Sum of digits in a given number 2
-Nth fibonacci number is -> 89
+1 2 3 4 5 
