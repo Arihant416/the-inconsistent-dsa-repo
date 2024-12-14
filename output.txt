@@ -1,2 +1,3 @@
 String Reversed is otomustam
 IS Prime ? 11 -> true
+Sum of digits in a given number 2

@@ -12,6 +12,8 @@ class MoreProblemsBasic {
     int number = sc.nextInt();
     System.out.println("IS Prime ? " + number + " -> " + isPrime(number));
 
+    System.out.println("Sum of digits in a given number " + sumUntilNumLessThan10(number));
+
   }
 
   private static String recurHelper(StringBuilder str, int start, int end) {
@@ -40,5 +42,16 @@ class MoreProblemsBasic {
     if (n <= 1)
       return false;
     return isPrimeRecurHelper(n, 2);
+  }
+
+  private static int sumUntilNumLessThan10(int num) {
+    if (num < 10)
+      return num;
+    int sum = 0;
+    while (num > 0) {
+      sum += (num % 10);
+      num /= 10;
+    }
+    return sumUntilNumLessThan10(sum);
   }
 }
