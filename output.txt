@@ -1,3 +1,2 @@
-a, j, r, 
-a, b, c, d, 
-e, r, t, 
+Tail Recursion took 3
+Head Recursion took 10
