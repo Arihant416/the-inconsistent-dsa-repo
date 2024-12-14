@@ -1,5 +1,5 @@
 Tail Recursion took 0
-Head Recursion took 0
+Head Recursion took 1
 1
 2
 3
@@ -10,3 +10,6 @@ Head Recursion took 0
 3
 2
 1
+Factorial of 5 is 120
+Sum till 5 is 15
+Sum of array is -> 34
