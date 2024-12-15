@@ -1,15 +1,20 @@
 Left Rotation By One
 Before Rotate 
-1 2 3 4 5 
+1 2 3 4 5 6 
 After Rotate 
-2 3 4 5 1 
+2 3 4 5 6 1 
 Right Rotation By One
 Before Rotate 
-1 2 3 4 5 
+1 2 3 4 5 6 
 After Rotate 
-5 1 2 3 4 
+6 1 2 3 4 5 
 Left Rotation By K
 Before Rotate
-1 2 3 4 5 
+1 2 3 4 5 6 
 After Rotate 
-4 5 1 2 3 
+3 4 5 6 1 2 
+Right Rotation By K
+Before Rotate
+1 2 3 4 5 6 
+After Rotate 
+5 6 1 2 3 4 
