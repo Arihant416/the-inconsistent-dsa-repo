@@ -1,2 +1,15 @@
-Largest in array 9
-Second Largest in array 8
+Left Rotation By One
+Before Rotate 
+1 2 3 4 5 
+After Rotate 
+2 3 4 5 1 
+Right Rotation By One
+Before Rotate 
+1 2 3 4 5 
+After Rotate 
+5 1 2 3 4 
+Left Rotation By K
+Before Rotate
+1 2 3 4 5 
+After Rotate 
+4 5 1 2 3 
