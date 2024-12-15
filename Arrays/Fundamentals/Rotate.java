@@ -14,6 +14,7 @@ class Rotate {
     leftRotateByOne(nums, N);
     rightRotateByOne(nums, N);
     leftRotateByK(nums, N, K);
+    rightRotateByK(nums, N, K);
   }
 
   private static void reverse(int[] nums, int startIndex, int endIndex) {
@@ -64,6 +65,15 @@ class Rotate {
     print(nums1);
   }
 
-  private static void rightRotateByK(int[] nums, int N) {
+  private static void rightRotateByK(int[] nums, int N, int K) {
+    int[] nums1 = nums.clone();
+    K = K % N;
+    System.out.println("Right Rotation By K\nBefore Rotate");
+    print(nums1);
+    reverse(nums1, 0, N - 1);
+    reverse(nums1, 0, K - 1);
+    reverse(nums1, K, N - 1);
+    System.out.println("After Rotate ");
+    print(nums1);
   }
 }
