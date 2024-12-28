@@ -1,4 +1,5 @@
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class LongestSubarrayWithSumK {
@@ -38,6 +39,26 @@ public class LongestSubarrayWithSumK {
           longest = Math.max(longest, j - i + 1);
         }
       }
+    }
+    return longest;
+  }
+
+  public static int longestSubarrayWithSumKHashing(int[] nums, int target) {
+    HashMap<Integer, Integer> mp = new HashMap<>();
+    int longest = 0;
+    int curSum = 0;
+    for (int i = 0; i < nums.length; i++) {
+      curSum += nums[i];
+      if (curSum == target) {
+        longest = Math.max(longest, i + 1);
+      }
+      int rem = curSum - target;
+      if (mp.containsKey(rem)) {
+        int index = mp.get(rem);
+        longest = Math.max(longest, i - index);
+      }
+      if (!mp.containsKey(curSum))
+        mp.put(curSum, i);
     }
     return longest;
   }
