@@ -1,2 +1,1 @@
-Count using Brute 2
-Count using optimal approach 2
+Using Brute Force -> 2
