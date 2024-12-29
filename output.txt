@@ -1,2 +1,2 @@
-Brute 4
-Slightly Better 4
+Count using Brute 2
+Count using optimal approach 2
