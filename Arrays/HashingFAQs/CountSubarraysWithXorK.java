@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class CountSubarraysWithXorK {
@@ -10,7 +11,7 @@ public class CountSubarraysWithXorK {
     }
     int target = sc.nextInt();
     System.out.println("Using Brute Force -> " + subArrayCountBrute(A, N, target));
-    // System.out.println("Using hashing -> " + subArrayCountOptimal(A, N, target));
+    System.out.println("Using hashing -> " + subArrayCountOptimal(A, N, target));
   }
 
   static int subArrayCountBrute(int[] A, int N, int target) {
@@ -19,14 +20,29 @@ public class CountSubarraysWithXorK {
       int xor = 0;
       for (int j = i; j < N; j++) {
         xor ^= A[j];
-        if (xor == target)
+        if (xor == target) {
+          System.out.println("From " + i + " to " + j);
           count++;
+        }
       }
     }
     return count;
   }
 
   static int subArrayCountOptimal(int[] A, int N, int target) {
-    return 0;
+    HashMap<Integer, Integer> mp = new HashMap<>();
+    int count = 0;
+    int xor = 0;
+    for (int i = 0; i < N; i++) {
+      xor ^= A[i];
+      if (xor == target)
+        count++;
+      int rem = xor ^ target;
+      if (mp.containsKey(rem)) {
+        count += mp.get(rem);
+      }
+      mp.put(xor, mp.getOrDefault(xor, 0) + 1);
+    }
+    return count;
   }
 }
