@@ -1,2 +1,1 @@
-Index Iterative Binary Search -> -1
-Index Recursive Binary Search -> -1
+Lower bound is -> 2
