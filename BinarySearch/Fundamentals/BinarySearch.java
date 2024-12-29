@@ -10,6 +10,7 @@ class BinarySearch {
     }
     int target = sc.nextInt();
     System.out.println("Index Iterative Binary Search -> " + findUsingIteration(A, N, target));
+    System.out.println("Index Recursive Binary Search -> " + findUsingRecursion(A, N, target));
   }
 
   static int findUsingIteration(int[] A, int N, int target) {
@@ -24,5 +25,21 @@ class BinarySearch {
         low = mid + 1;
     }
     return -1;
+  }
+
+  static int binarySearchRecursion(int[] A, int low, int high, int target) {
+    if (low > high)
+      return -1;
+    int mid = low + (high - low) / 2;
+    if (A[mid] == target)
+      return mid;
+    else if (A[mid] > target)
+      return binarySearchRecursion(A, low, mid - 1, target);
+    else
+      return binarySearchRecursion(A, mid + 1, high, target);
+  }
+
+  static int findUsingRecursion(int[] A, int N, int target) {
+    return binarySearchRecursion(A, 0, N - 1, target);
   }
 }
