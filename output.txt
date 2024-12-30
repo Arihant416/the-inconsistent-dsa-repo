@@ -1,1 +1,1 @@
-Min element is -> 2
+Number of rotation is -> 6
