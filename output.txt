@@ -1,1 +1,1 @@
-Target exists ? false
+Min element is -> 2
