@@ -1,1 +1,1 @@
-Number of rotation is -> 6
+Single element is -> 4
