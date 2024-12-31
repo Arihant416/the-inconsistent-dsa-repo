@@ -1,1 +1,1 @@
-SQRT using Binary Search -> 61
+Nth root of M is -> 2
