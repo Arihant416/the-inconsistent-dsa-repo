@@ -1,1 +1,1 @@
-Nth root of M is -> 2
+ Smallest Divisor is -> 8
