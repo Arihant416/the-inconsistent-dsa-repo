@@ -1,1 +1,1 @@
-minEatingRequired -> 4
+Minimum Days to make at least m bouquets each with k roses 3
