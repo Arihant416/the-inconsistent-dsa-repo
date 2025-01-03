@@ -1,1 +1,1 @@
- Smallest Divisor is -> 8
+minEatingRequired -> 4
