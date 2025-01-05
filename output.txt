@@ -1,1 +1,1 @@
-Minimum Days to make at least m bouquets each with k roses 3
+Max Possible Minimum Distance -> 4
