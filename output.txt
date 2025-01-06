@@ -1,1 +1,1 @@
-Max Possible Minimum Distance -> 4
+Max Min Allocation -> 32
