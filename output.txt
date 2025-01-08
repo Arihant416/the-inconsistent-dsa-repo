@@ -1,1 +1,1 @@
-Max Min Allocation -> 32
+A peak element in the array is -> 5
