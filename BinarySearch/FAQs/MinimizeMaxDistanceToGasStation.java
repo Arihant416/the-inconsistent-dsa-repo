@@ -12,6 +12,7 @@ class MinimizeMaxDistanceToGasStation {
       int k = sc.nextInt();
       System.out.println("Using Brute Force -> " + solveUsingBruteForce(A.clone(), N, k));
       System.out.println("Using Priority Queue -> " + solveUsingPriorityQueue(A.clone(), N, k));
+      System.out.println("Using Binary Search -> " + solveOptimallyUsingBinarySearch(A.clone(), N, k));
     }
   }
 
@@ -65,5 +66,35 @@ class MinimizeMaxDistanceToGasStation {
       this.sectionLength = sectionLength;
       this.index = index;
     }
+  }
+
+  public static int countOfGasStations(int[] A, double diff) {
+    int count = 0;
+    for (int i = 1; i < A.length; i++) {
+      int inBetween = (int) ((A[i] - A[i - 1]) / diff);
+      if ((A[i] - A[i - 1]) / diff == inBetween * diff) {
+        inBetween--;
+      }
+      count += inBetween;
+    }
+    return count;
+  }
+
+  public static double solveOptimallyUsingBinarySearch(int[] A, int N, int K) {
+    double low = 0, high = Integer.MIN_VALUE;
+    for (int i = 0; i < N - 1; i++) {
+      high = Math.max(high, A[i + 1] - A[i]);
+    }
+    double diff = 1e-6;
+    while (high - low > diff) {
+      double mid = low + (high - low) / (double) 2;
+      int count = countOfGasStations(A, mid);
+      if (count > K)
+        low = mid;
+      else {
+        high = mid;
+      }
+    }
+    return high;
   }
 }

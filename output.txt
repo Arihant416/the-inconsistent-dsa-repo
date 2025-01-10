@@ -1,1 +1,3 @@
-A peak element in the array is -> 5
+Using Brute Force -> 14.0
+Using Priority Queue -> 14.0
+Using Binary Search -> 14.000000089406967
