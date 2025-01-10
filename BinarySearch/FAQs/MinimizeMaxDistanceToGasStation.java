@@ -1,4 +1,5 @@
 
+import java.util.PriorityQueue;
 import java.util.Scanner;
 
 class MinimizeMaxDistanceToGasStation {
@@ -10,6 +11,7 @@ class MinimizeMaxDistanceToGasStation {
         A[i] = sc.nextInt();
       int k = sc.nextInt();
       System.out.println("Using Brute Force -> " + solveUsingBruteForce(A.clone(), N, k));
+      System.out.println("Using Priority Queue -> " + solveUsingPriorityQueue(A.clone(), N, k));
     }
   }
 
@@ -35,5 +37,33 @@ class MinimizeMaxDistanceToGasStation {
       ans = Math.max(ans, section);
     }
     return Double.toString(ans);
+  }
+
+  public static double solveUsingPriorityQueue(int[] A, int N, int K) {
+    PriorityQueue<Pair> pq = new PriorityQueue<>((Pair a, Pair b) -> Double.compare(b.sectionLength, a.sectionLength));
+    int[] placed = new int[N - 1];
+    // Place current difference in pq
+    for (int i = 0; i < N - 1; i++) {
+      pq.add(new Pair(A[i + 1] - A[i], i));
+    }
+    for (int gs = 1; gs <= K; gs++) {
+      Pair p = pq.poll();
+      int index = p.index;
+      placed[index]++;
+      double initialLength = (double) (A[index + 1] - A[index]);
+      double newSectionLength = initialLength / (double) (placed[index] + 1);
+      pq.add(new Pair(newSectionLength, index));
+    }
+    return pq.peek().sectionLength;
+  }
+
+  private static class Pair {
+    double sectionLength;
+    int index;
+
+    Pair(double sectionLength, int index) {
+      this.sectionLength = sectionLength;
+      this.index = index;
+    }
   }
 }
