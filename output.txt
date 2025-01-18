@@ -1,9 +1,2 @@
-Arihant 3
-Arihant 2
-Arihant 1
-1
-2
-3
-3
-2
-1
+Sum of N terms 21
+Factorial of N 720

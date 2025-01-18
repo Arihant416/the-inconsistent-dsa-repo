@@ -5,11 +5,13 @@ public class ProblemSet1 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     int N = sc.nextInt();
-    printNameNTimes(N);
-    print1ToN(N);
-    printNTo1(N);
+    // printNameNTimes(N);
+    // print1ToN(N);
+    // printNTo1(N);
+    System.out.println("Sum of N terms " + findSumOfNTerms(N));
+    System.out.println("Factorial of N " + findFactorial(N));
   }
-  
+
   static void printNameNTimes(int N) {
     if (N == 0)
       return;
@@ -29,5 +31,17 @@ public class ProblemSet1 {
       return;
     System.out.println(N);
     printNTo1(N - 1);
+  }
+
+  static int findSumOfNTerms(int N) {
+    if (N == 0)
+      return 0;
+    return N + findSumOfNTerms(N - 1);
+  }
+
+  static int findFactorial(int N) {
+    if (N <= 1)
+      return 1;
+    return N * findFactorial(--N); // Note --N works and N-- fails because of usage and precedence.
   }
 }
