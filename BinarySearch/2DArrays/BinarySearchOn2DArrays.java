@@ -13,7 +13,7 @@ public class BinarySearchOn2DArrays {
       }
     }
     int target = sc.nextInt();
-    System.out.println("Has Element ? -> " + searchInA2DMatrix(matrix, N, M, target));
+    System.out.println("Has Element ? -> " + searchInA2DMatrix2(matrix, N, M, target));
   }
 
   static int findRowsWithMaximum1s(int[][] matrix, int N, int M) {
@@ -67,6 +67,19 @@ public class BinarySearchOn2DArrays {
         }
         return false;
       }
+    }
+    return false;
+  }
+
+  static boolean searchInA2DMatrix2(int[][] matrix, int N, int M, int target) {
+    int lowR = 0, highC = M - 1;
+    while (lowR < N && highC >= 0) {
+      if (matrix[lowR][highC] == target)
+        return true;
+      if (matrix[lowR][highC] > target)
+        highC--;
+      else
+        lowR++;
     }
     return false;
   }
