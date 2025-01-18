@@ -10,6 +10,8 @@ public class ProblemSet1 {
     // printNTo1(N);
     System.out.println("Sum of N terms " + findSumOfNTerms(N));
     System.out.println("Factorial of N " + findFactorial(N));
+    StringBuilder s = new StringBuilder(sc.next());
+    System.out.println("Reverse of s " + reverseString(s, 0, s.length() - 1));
   }
 
   static void printNameNTimes(int N) {
@@ -43,5 +45,14 @@ public class ProblemSet1 {
     if (N <= 1)
       return 1;
     return N * findFactorial(--N); // Note --N works and N-- fails because of usage and precedence.
+  }
+
+  static StringBuilder reverseString(StringBuilder s, int start, int end) {
+    if (start >= end)
+      return s;
+    char temp = s.charAt(start);
+    s.setCharAt(start, s.charAt(end));
+    s.setCharAt(end, temp);
+    return reverseString(s, start + 1, end - 1);
   }
 }

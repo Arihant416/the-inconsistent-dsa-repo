@@ -1,2 +1,3 @@
 Sum of N terms 21
 Factorial of N 720
+Reverse of s tnahirA
