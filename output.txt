@@ -1,2 +1,6 @@
-Median of Two Sorted Arrays 4.0
-Median of two sorted Arrays using Binary Search 4.0
+Count for 0 , 3
+Count for 1 , 5
+Count for 2 , 2
+Count for 3 , 6
+Count for 4 , 4
+Row index with Max ones is -> 3
