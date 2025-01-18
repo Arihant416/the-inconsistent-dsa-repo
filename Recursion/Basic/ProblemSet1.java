@@ -10,6 +10,7 @@ public class ProblemSet1 {
     // printNTo1(N);
     System.out.println("Sum of N terms " + findSumOfNTerms(N));
     System.out.println("Factorial of N " + findFactorial(N));
+    System.out.println("Fibo  N " + findNthFibo(N));
     StringBuilder s = new StringBuilder(sc.next());
     System.out.println("Reverse of s " + reverseString(s, 0, s.length() - 1));
   }
@@ -54,5 +55,11 @@ public class ProblemSet1 {
     s.setCharAt(start, s.charAt(end));
     s.setCharAt(end, temp);
     return reverseString(s, start + 1, end - 1);
+  }
+
+  static int findNthFibo(int N) {
+    if (N == 0 || N == 1)
+      return N;
+    return findNthFibo(N - 1) + findNthFibo(N - 2);
   }
 }
