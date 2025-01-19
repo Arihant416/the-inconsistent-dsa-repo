@@ -9,6 +9,7 @@ class ProblemSet2 {
     printAllSubsequences(A);
     printSubsequencesWhoseSumIsK(A, sum);
     printAnyOneSubsequenceWithSumK(A, sum);
+    countAllSubsequencesWithSumK(A, sum);
   }
 
   static void printAllSubsequencesHelper(int[] A, List<Integer> curList, int index) {
@@ -79,5 +80,22 @@ class ProblemSet2 {
       System.out.println("Found one subsequence " + curList.toString());
     else
       System.out.println("Not found any one subsequence with sum k");
+  }
+
+  static int countSubsequences(int[] A, int index, int k) {
+    if (k == 0)
+      return 1;
+    if (k < 0)
+      return 0;
+    if (index == A.length)
+      return k == 0 ? 1 : 0;
+    int left = countSubsequences(A, index + 1, k - A[index]);
+    int right = countSubsequences(A, index + 1, k);
+    return left + right;
+  }
+
+  static void countAllSubsequencesWithSumK(int[] A, int k) {
+    int result = countSubsequences(A, 0, k);
+    System.out.println("Subsequences with sum k : count = " + result);
   }
 }

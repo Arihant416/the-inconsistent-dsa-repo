@@ -20,3 +20,4 @@ Subsequences with sum K :
 1 3 
 4 
 Found one subsequence [1, 3]
+Subsequences with sum k : count = 2
