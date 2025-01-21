@@ -5,11 +5,39 @@ import java.util.List;
 
 class ProblemSet3 {
   public static void main(String[] args) {
-    int[] A = new int[] { 2, 1, 2, 7, 6, 1, 5};
-    int target = 8;
+    int[] A = new int[] { 2, 1, 2, 7, 6, 1, 5 };
+    int target = 2;
+    generateParanthesis(target);
 
     // printAllCombinationsLeadingToSumTarget(A, target);
-    combinationSum2(A, target);
+    // combinationSum2(A, target);
+  }
+
+  static void recur(int N, String s, int openCount, int closeCount, List<String> res) {
+    if (openCount > N || closeCount > N)
+      return;
+    if ((openCount + closeCount == 2 * N) && openCount == closeCount) {
+      res.add(s);
+      return;
+    }
+    if (openCount < N) {
+      recur(N, s + '(', openCount + 1, closeCount, res);
+    }
+    if (closeCount < openCount) {
+      recur(N, s + ")", openCount, closeCount + 1, res);
+    }
+  }
+
+  static void generateParanthesis(int N) {
+    if (N == 0) {
+      System.out.println("N is 0 -> No Paranthesis generated");
+    } else {
+      String s = "";
+      List<String> res = new ArrayList<>();
+      recur(N, s, 0, 0, res);
+      for (String d : res)
+        System.out.println(d);
+    }
   }
 
   static void printAllCombinations(int[] A, int target, List<Integer> temp, int index) {
