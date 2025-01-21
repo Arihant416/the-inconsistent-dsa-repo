@@ -1,13 +1,14 @@
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 class ProblemSet3 {
   public static void main(String[] args) {
-    int[] A = new int[] { 2, 3, 6, 7, 4, 1 };
-    int target = 7;
+    int[] A = new int[] { 2, 1, 2, 7, 6, 1, 5};
+    int target = 8;
 
-    printAllCombinationsLeadingToSumTarget(A, target);
+    // printAllCombinationsLeadingToSumTarget(A, target);
     combinationSum2(A, target);
   }
 
@@ -52,6 +53,7 @@ class ProblemSet3 {
     // Do not repeat any elements
     System.out.println("Combination Sum 2 -> Unique Sums ");
     List<Integer> temp = new ArrayList<>();
+    Arrays.sort(A);
     printAllCombinationsWithoutRepeat(A, target, temp, 0);
   }
 }
