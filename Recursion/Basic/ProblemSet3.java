@@ -5,10 +5,10 @@ import java.util.List;
 
 class ProblemSet3 {
   public static void main(String[] args) {
-    int[] A = new int[] { 2, 1, 2, 7, 6, 1, 5 };
+    int[] A = new int[] { 2, 1 };
     int target = 2;
-    generateParanthesis(target);
-
+    // generateParanthesis(target);
+    subsetSums(A);
     // printAllCombinationsLeadingToSumTarget(A, target);
     // combinationSum2(A, target);
   }
@@ -83,5 +83,20 @@ class ProblemSet3 {
     List<Integer> temp = new ArrayList<>();
     Arrays.sort(A);
     printAllCombinationsWithoutRepeat(A, target, temp, 0);
+  }
+
+  static void recursivelyFindAllSubsetSums(int[] nums, int sum, int index, List<Integer> ds) {
+    if (index == nums.length) {
+      ds.add(sum);
+      return;
+    }
+    recursivelyFindAllSubsetSums(nums, sum + nums[index], index + 1, ds);
+    recursivelyFindAllSubsetSums(nums, sum, index + 1, ds);
+  }
+
+  static void subsetSums(int[] nums) {
+    List<Integer> res = new ArrayList<>();
+    recursivelyFindAllSubsetSums(nums, 0, 0, res);
+    System.out.println("subsetSums -> " + res.toString());
   }
 }
