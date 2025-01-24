@@ -5,12 +5,13 @@ import java.util.List;
 
 class ProblemSet3 {
   public static void main(String[] args) {
-    int[] A = new int[] { 2, 1 };
+    int[] A = new int[] { 2, 1, 3, 2, 1 };
     int target = 2;
     // generateParanthesis(target);
-    subsetSums(A);
+    // subsetSums(A);
     // printAllCombinationsLeadingToSumTarget(A, target);
     // combinationSum2(A, target);
+    uniqueSubsets(A);
   }
 
   static void recur(int N, String s, int openCount, int closeCount, List<String> res) {
@@ -98,5 +99,30 @@ class ProblemSet3 {
     List<Integer> res = new ArrayList<>();
     recursivelyFindAllSubsetSums(nums, 0, 0, res);
     System.out.println("subsetSums -> " + res.toString());
+  }
+
+  static void recursivelyFindAllUniqueSubsets(int[] nums, int index, List<List<Integer>> res, List<Integer> temp) {
+    if (index == nums.length) {
+      res.add(new ArrayList<>(temp));
+      return;
+    }
+    temp.add(nums[index]);
+    recursivelyFindAllUniqueSubsets(nums, index + 1, res, temp);
+    temp.remove(temp.size() - 1);
+    for (int i = index + 1; i < nums.length; i++) {
+      if (nums[i] != nums[index]) {
+        recursivelyFindAllUniqueSubsets(nums, i, res, temp);
+        return;
+      }
+    }
+    recursivelyFindAllUniqueSubsets(nums, nums.length, res, temp);
+  }
+
+  static void uniqueSubsets(int[] nums) {
+    List<List<Integer>> temp = new ArrayList<>();
+    List<Integer> res = new ArrayList<>();
+    Arrays.sort(nums);
+    recursivelyFindAllUniqueSubsets(nums, 0, temp, res);
+    System.out.println("Unique Subsets " + temp.toString());
   }
 }
