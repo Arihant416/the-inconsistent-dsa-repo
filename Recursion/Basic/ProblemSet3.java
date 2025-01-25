@@ -11,7 +11,8 @@ class ProblemSet3 {
     // subsetSums(A);
     // printAllCombinationsLeadingToSumTarget(A, target);
     // combinationSum2(A, target);
-    uniqueSubsets(A);
+    // uniqueSubsets(A);
+    combinationSum3(5, 21);
   }
 
   static void recur(int N, String s, int openCount, int closeCount, List<String> res) {
@@ -124,5 +125,30 @@ class ProblemSet3 {
     Arrays.sort(nums);
     recursivelyFindAllUniqueSubsets(nums, 0, temp, res);
     System.out.println("Unique Subsets " + temp.toString());
+  }
+
+  static void recurCS3(int target, int k, int index, List<Integer> temp, List<List<Integer>> result) {
+    if (target == 0 && temp.size() == k) {
+      result.add(new ArrayList<>(temp));
+      return;
+    }
+    if (target < 0 || temp.size() > k)
+      return;
+    for (int i = index; i <= 9; i++) {
+      if (target >= i) {
+        temp.add(i);
+        recurCS3(target - i, k, i + 1, temp, result);
+        temp.remove(temp.size() - 1);
+      }else{
+        break;
+      }
+    }
+  }
+
+  static void combinationSum3(int k, int target) {
+    List<List<Integer>> result = new ArrayList<>();
+    List<Integer> temp = new ArrayList<>();
+    recurCS3(target, k, 1, temp, result);
+    System.out.println("CS3 " + result.toString());
   }
 }
