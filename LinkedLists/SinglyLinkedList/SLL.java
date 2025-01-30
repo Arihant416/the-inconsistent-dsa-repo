@@ -23,6 +23,17 @@ public class SLL {
         size += 1;
     }
 
+    public void insertAtEnd(int value){
+        if(head == null){
+            head = new Node(value);
+        }else{
+            Node cur = head;
+            while(cur.next != null){
+                cur = cur.next;
+            }
+            cur.next = new Node(value);
+        }
+    }
 
     public boolean exists(int value){
         printList();

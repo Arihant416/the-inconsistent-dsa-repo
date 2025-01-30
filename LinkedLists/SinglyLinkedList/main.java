@@ -4,9 +4,11 @@ public class main {
         list.printList();
         list.insertAtBeginning(2);
         list.printList();
+        list.insertAtEnd(4);
         list.insertAtBeginning(1);
         list.printList();
         list.insertAtBeginning(0);
+        list.insertAtEnd(5);
         list.printList();
         System.out.println("5 exists ? " + list.exists(5));
         System.out.println("4 exists ? " + list.exists(4));
