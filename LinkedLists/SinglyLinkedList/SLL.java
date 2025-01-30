@@ -23,6 +23,19 @@ public class SLL {
         size += 1;
     }
 
+
+    public boolean exists(int value){
+        printList();
+        if(head == null)return false;
+        if(head.data == value)return true;
+        Node cur = head;
+        while(cur != null){
+            if(cur.data == value)return true;
+            cur = cur.next;
+        }
+        return false;
+    }
+
     public void printList() {
         if (head == null) {
             System.out.println("No Elements in linked list");
