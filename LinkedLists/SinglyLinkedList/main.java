@@ -14,5 +14,6 @@ public class main {
         System.out.println("2 exists ? " + list.exists(2));
         System.out.println("10 exists ? " + list.exists(10));
         System.out.println("0 exists ? " + list.exists(0));
+        System.out.println("Length of linkedList " + list.getLength());
     }
 }

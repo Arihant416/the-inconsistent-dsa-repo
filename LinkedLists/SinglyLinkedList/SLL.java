@@ -48,4 +48,15 @@ public class SLL {
         }
         System.out.println();
     }
+
+    public int getLength(){
+        if(head == null)return 0;
+        Node cur= head;
+        int count = 0;
+        while(cur != null){
+            count ++;
+            cur = cur.next;
+        }
+        return count;
+    }
 }
