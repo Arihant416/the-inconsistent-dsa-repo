@@ -20,5 +20,8 @@ public class main {
         list.display();
         list.deleteASpecificNode(6);
         list.display();
+        list.reverse(false); // Reverse iteratively check if reversed successfully, if yes reverse to revert back (reverse recursively)
+        list.display();
+        
     }
 }

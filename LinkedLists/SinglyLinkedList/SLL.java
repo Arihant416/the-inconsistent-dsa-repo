@@ -128,4 +128,28 @@ public class SLL {
         }
         return count;
     }
+
+    public Node reverseRecursively(Node head){
+        return head;
+    }
+
+    public Node reverseIteratively(Node head){
+        Node cur = head, next, prev=null;
+        while(cur != null){
+            next = cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur = next;
+            System.out.println("cur is " + (cur != null ? cur.data : "NULL") + ", next is " + (next != null ? next.data : "NULL") + ", prev is " + prev.data);
+        }
+        return prev;
+    }
+
+    public void reverse(boolean recursively){
+        if(recursively){
+            head = reverseRecursively(head);
+        }else{
+            head = reverseIteratively(head);
+        }
+    }
 }
