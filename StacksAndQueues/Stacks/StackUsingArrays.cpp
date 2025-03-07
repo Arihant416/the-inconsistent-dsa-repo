@@ -82,9 +82,9 @@ int main()
 {
   StackImplementation s;
   s.push(1);
-  cout << s.getSize();
-  cout << s.getTop();
-  cout << s.pop();
+  cout << "Size is " << s.getSize() << endl;
+  cout << "Top is -> " << s.getTop() << endl;
+  cout << s.pop() << endl;
   s.push(2);
   s.push(3);
   s.push(4);
