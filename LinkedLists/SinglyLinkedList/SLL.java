@@ -130,7 +130,12 @@ public class SLL {
     }
 
     public Node reverseRecursively(Node head){
-        return head;
+        if(head == null || head.next == null)return head;
+        System.out.println("Calling recursion -> " + head.data);
+        Node front = reverseRecursively(head.next);
+        head.next.next = head;
+        head.next = null;
+        return front;
     }
 
     public Node reverseIteratively(Node head){
