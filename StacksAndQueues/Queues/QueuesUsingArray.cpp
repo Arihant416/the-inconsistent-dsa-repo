@@ -17,22 +17,21 @@ private:
 public:
   CustomQueue()
   {
-    this->size = 10;
-    this->front = -1;
-    this->last = -1;
-    this->queue = new int[size];
+    size = 10;
+    front = -1;
+    last = -1;
+    queue = new int[size];
   }
 
   void enqueue(int element)
   {
-    if (last == size - 1)
+    if ((last + 1) % size == front)
     {
-      cout << "Queue Overflowing" << endl;
+      cout << "Queue is full" << endl;
+      return;
     }
-    else
-    {
-      this->queue[++last] = element;
-    }
+    last = (last + 1) % size;
+    queue[last] = element;
   }
 
   int dequeue()
@@ -44,20 +43,21 @@ public:
     }
     else
     {
-      return this->queue[++front];
+      front = (front + 1) % size;
+      return queue[front];
     }
   }
 
   int peek()
   {
-    if (front != -1 && last != front)
-    {
-      return this->queue[front + 1];
-    }
-    else
+    if (last == front)
     {
       cout << "Queue is empty" << endl;
       return -1;
+    }
+    else
+    {
+      return queue[(front + 1) % size];
     }
   }
 
@@ -74,10 +74,11 @@ public:
     }
     else
     {
-      for (int i = front + 1; i <= last; i++)
+      for (int i = (front + 1) % size; i != (last + 1) % size; i = (i + 1) % size)
       {
-        cout << queue[i] << endl;
+        cout << queue[i] << " ";
       }
+      cout << endl;
     }
   }
 };
@@ -95,6 +96,18 @@ int32_t main()
   q.printQueue();                              // Output: 20 30
 
   cout << "Peek: " << q.peek() << endl; // Output: 20
+  q.printQueue();
+
+  q.enqueue(40);
+  q.enqueue(50);
+  q.enqueue(60);
+  q.enqueue(70);
+  q.enqueue(80);
+  q.enqueue(90);
+  q.enqueue(100);
+  q.enqueue(110);
+  q.enqueue(120); // This should print "Queue is full"
+
   q.printQueue();
   return 0;
 }
